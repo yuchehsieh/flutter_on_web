@@ -22,13 +22,14 @@ const kNavText = TextStyle(
 );
 
 const kParagraphText = TextStyle(
-  fontFamily: 'ArialMT Regular',
+  fontFamily: 'Arial',
+  letterSpacing: 1,
   fontSize: 12,
   color: Color.fromRGBO(125, 125, 125, 1),
 );
 
 const kFooterText = TextStyle(
   color: kSecondaryColor,
-  fontFamily: 'ArialMT Regular',
+  fontFamily: 'Arial',
   fontSize: 12,
 );

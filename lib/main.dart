@@ -27,15 +27,23 @@ class MyHomePage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 160),
-              child: ListView(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 160,
+                vertical: 35,
+              ),
+              child: Column(
                 children: <Widget>[
                   TitleBar(),
                   SizedBox(height: 5),
                   NavBar(),
-                  SizedBox(height: 10),
-                  Image.asset('images/img_main_pumpkin.png'),
-                  SizedBox(height: 10),
+                  SizedBox(height: 20),
+                  Expanded(
+                    child: Image.asset(
+                      'images/img_main_pumpkin.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(height: 30),
                   SubContent(),
                 ],
               ),
@@ -53,12 +61,29 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Theme.of(context).primaryColor,
-      padding: EdgeInsets.symmetric(vertical: 15),
-      child: Center(
-        child: Text(
-          'Copyrights 2017 Vegetables cise / Design by Vegetables',
-          style: kFooterText,
-        ),
+      padding: EdgeInsets.symmetric(vertical: 23),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            'Copyrights 2017 Vegetables cise / Design by Vegetables',
+            style: kFooterText,
+          ),
+          SizedBox(width: 10),
+          Text(
+            'Powered by',
+            style: kFooterText,
+          ),
+          SizedBox(
+            width: 30,
+            height: 30,
+            child: Image.asset(
+              'images/img_flutter_logo.png',
+              fit: BoxFit.cover,
+            ),
+          )
+        ],
       ),
     );
   }
@@ -83,20 +108,35 @@ class SubContent extends StatelessWidget {
                 width: double.infinity,
                 child: NavText(text: 'Vegetables'),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 15),
               Row(
                 children: <Widget>[
-                  Image.asset('images/img_vegetables_pepper.png'),
+                  Expanded(
+                    child: Image.asset(
+                      'images/img_vegetables_pepper.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   SizedBox(width: 5),
-                  Image.asset('images/img_vegetables_carrot.png'),
+                  Expanded(
+                    child: Image.asset(
+                      'images/img_vegetables_carrot.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   SizedBox(width: 5),
-                  Image.asset('images/img_vegetables_corn.png'),
+                  Expanded(
+                    child: Image.asset(
+                      'images/img_vegetables_corn.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ],
               )
             ],
           ),
         ),
-        SizedBox(width: 15),
+        SizedBox(width: 52),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -111,23 +151,15 @@ class SubContent extends StatelessWidget {
                 width: double.infinity,
                 child: NavText(text: 'Contact'),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 15),
               Container(
                 color: Color.fromRGBO(247, 253, 186, 1),
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'For any questions or suggestions about Vegetables, Vegetables Club or your',
-                      style: kParagraphText,
-                    ),
-                    Text(
-                      'online order you can contact Vegetables Customer Service by phone, email',
-                      style: kParagraphText,
-                    ),
-                    Text(
-                      'or post and we’ll be happy to help.',
+                      'For any questions or suggestions about Vegetables, Vegetables Club or your online order you can contact Vegetables Customer Service by phone, email or post and we’ll be happy to help.',
                       style: kParagraphText,
                     ),
                     SizedBox(height: 15),
